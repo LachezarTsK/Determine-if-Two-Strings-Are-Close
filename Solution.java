@@ -10,29 +10,29 @@ public class Solution {
             return false;
         }
 
-        int[] frequenyWordOne = new int[ALPHABET_SIZE];
-        int[] frequenyWordTwo = new int[ALPHABET_SIZE];
+        int[] frequencyWordOne = new int[ALPHABET_SIZE];
+        int[] frequencyWordTwo = new int[ALPHABET_SIZE];
         for (int i = 0; i < wordOne.length(); ++i) {
-            ++frequenyWordOne[wordOne.charAt(i) - 'a'];
-            ++frequenyWordTwo[wordTwo.charAt(i) - 'a'];
+            ++frequencyWordOne[wordOne.charAt(i) - 'a'];
+            ++frequencyWordTwo[wordTwo.charAt(i) - 'a'];
         }
 
-        return wordsHaveSameUniqueLettersRegardlessOfFrequency(frequenyWordOne, frequenyWordTwo)
-                && wordsHaveSameFrequencyPatternRegardlessOfLetters(frequenyWordOne, frequenyWordTwo);
+        return wordsHaveSameUniqueLettersRegardlessOfFrequency(frequencyWordOne, frequencyWordTwo)
+                && wordsHaveSameFrequencyPatternRegardlessOfLetters(frequencyWordOne, frequencyWordTwo);
     }
 
-    private boolean wordsHaveSameUniqueLettersRegardlessOfFrequency(int[] frequenyWordOne, int[] frequenyWordTwo) {
+    private boolean wordsHaveSameUniqueLettersRegardlessOfFrequency(int[] frequencyWordOne, int[] frequencyWordTwo) {
         for (int i = 0; i < ALPHABET_SIZE; ++i) {
-            if (frequenyWordOne[i] == 0 ^ frequenyWordTwo[i] == 0) {
+            if (frequencyWordOne[i] == 0 ^ frequencyWordTwo[i] == 0) {
                 return false;
             }
         }
         return true;
     }
 
-    private boolean wordsHaveSameFrequencyPatternRegardlessOfLetters(int[] frequenyWordOne, int[] frequenyWordTwo) {
-        Arrays.sort(frequenyWordOne);
-        Arrays.sort(frequenyWordTwo);
-        return Arrays.equals(frequenyWordOne, frequenyWordTwo);
+    private boolean wordsHaveSameFrequencyPatternRegardlessOfLetters(int[] frequencyWordOne, int[] frequencyWordTwo) {
+        Arrays.sort(frequencyWordOne);
+        Arrays.sort(frequencyWordTwo);
+        return Arrays.equals(frequencyWordOne, frequencyWordTwo);
     }
 }
